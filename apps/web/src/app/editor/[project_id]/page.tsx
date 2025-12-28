@@ -12,6 +12,7 @@ import { PropertiesPanel } from "@/components/editor/properties-panel";
 import { Timeline } from "@/components/editor/timeline";
 import { PreviewPanel } from "@/components/editor/preview-panel";
 import { EditorHeader } from "@/components/editor/editor-header";
+import { ConversationPanel } from "@/components/editor/conversation-panel";
 import { usePanelStore } from "@/stores/panel-store";
 import { useProjectStore } from "@/stores/project-store";
 import { EditorProvider } from "@/components/providers/editor-provider";
@@ -415,8 +416,8 @@ export default function Editor() {
 
                   {/* Preview Area */}
                   <ResizablePanel
-                    defaultSize={previewPanel}
-                    minSize={30}
+                    defaultSize={60}
+                    minSize={40}
                     onResize={setPreviewPanel}
                     className="min-w-0 min-h-0 flex-1"
                   >
@@ -426,13 +427,12 @@ export default function Editor() {
                   <ResizableHandle withHandle />
 
                   <ResizablePanel
-                    defaultSize={propertiesPanel}
-                    minSize={15}
-                    maxSize={40}
-                    onResize={setPropertiesPanel}
+                    defaultSize={40}
+                    minSize={25}
+                    maxSize={50}
                     className="min-w-0 rounded-sm"
                   >
-                    <PropertiesPanel />
+                    <ConversationPanel />
                   </ResizablePanel>
                 </ResizablePanelGroup>
               </ResizablePanel>
